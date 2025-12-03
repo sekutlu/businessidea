@@ -1,13 +1,11 @@
 <?php
 session_start();
 
-// Redirect if not logged in
 if (!isset($_SESSION["user_id"])) {
     header("Location: login.php");
     exit;
 }
 
-// Store session data in variables
 $user_id   = $_SESSION["user_id"];
 $user_name = $_SESSION["user_name"];
 ?>
@@ -78,7 +76,6 @@ $user_name = $_SESSION["user_name"];
 
 <body class="bg-gray-50">
 
-    <!-- Navigation -->
     <nav class="bg-white shadow-sm py-4 sticky top-0 z-10">
         <div class="container mx-auto px-6 flex justify-between items-center">
             <div class="flex items-center space-x-2">
@@ -102,7 +99,6 @@ $user_name = $_SESSION["user_name"];
                             <i class="fas fa-user text-blue-600"></i>
                         </div>
 
-                        <!-- USER NAME FROM SESSION -->
                         <span class="hidden md:inline">
                             <?= htmlspecialchars($user_name); ?>
                         </span>
@@ -115,7 +111,6 @@ $user_name = $_SESSION["user_name"];
     </nav>
 
     <div class="flex">
-        <!-- Sidebar -->
         <div class="w-64 bg-white h-screen shadow-sm p-6 hidden md:block">
             <div class="mb-8">
                 <h2 class="text-lg font-semibold text-gray-800">Workspace</h2>
@@ -162,17 +157,14 @@ $user_name = $_SESSION["user_name"];
             </ul>
         </div>
 
-        <!-- Main Content -->
         <div class="flex-1 p-6">
             <div class="mb-6">
                 <h1 class="text-2xl font-bold text-gray-800">Dashboard</h1>
                 <p class="text-gray-600">Welcome back, <?= htmlspecialchars($user_name); ?>!</p>
             </div>
 
-            <!-- Stats Cards -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
 
-                <!-- Replace with dynamic data later if needed -->
                 <div class="bg-white p-6 rounded-xl shadow-sm card-hover">
                     <div class="flex items-center justify-between mb-4">
                         <h2 class="text-lg font-semibold text-gray-700">Total Ideas</h2>
