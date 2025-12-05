@@ -29,43 +29,34 @@ $user_name = $_SESSION["user_name"];
             --success: #10b981;
             --warning: #f59e0b;
         }
-        
         body {
             font-family: 'Inter', sans-serif;
         }
-        
         .card-hover {
             transition: all 0.3s ease;
         }
-        
         .card-hover:hover {
             transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 
-                        0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
-        
         .sidebar-link {
             transition: all 0.2s ease;
         }
-        
         .sidebar-link:hover {
             background-color: rgba(37, 99, 235, 0.1);
             border-left: 4px solid var(--primary);
         }
-        
         .sidebar-link.active {
             background-color: rgba(37, 99, 235, 0.1);
             border-left: 4px solid var(--primary);
             color: var(--primary);
         }
-        
         .progress-bar {
             height: 8px;
             border-radius: 4px;
             background-color: #e5e7eb;
             overflow: hidden;
         }
-        
         .progress-fill {
             height: 100%;
             border-radius: 4px;
@@ -75,26 +66,9 @@ $user_name = $_SESSION["user_name"];
 </head>
 
 <body class="bg-gray-50">
-
-    <nav class="bg-white shadow-sm py-4 sticky top-0 z-10">
-        <div class="container mx-auto px-6 flex justify-between items-center">
-            <div class="flex items-center space-x-2">
-                <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
-                    <i class="fas fa-lightbulb text-white text-xl"></i>
-                </div>
-                <span class="text-xl font-bold text-gray-800">IdeateHub</span>
-            </div>
-            
-            <div class="hidden md:flex space-x-8">
-                <a href="index.php" class="text-gray-600 hover:text-blue-600 font-medium">Home</a>
-                <a href="dashboard.php" class="text-blue-600 font-medium">Dashboard</a>
-                <a href="upcoming_feature.php" class="text-gray-600 hover:text-blue-600 font-medium">My Ideas</a>
-                <a href="upcoming_feature.php" class="text-gray-600 hover:text-blue-600 font-medium">Teams</a>
-            </div>
-            
             <div class="flex items-center space-x-4">
-                <div class="relative">
-                    <button class="flex items-center space-x-2 text-gray-700 hover:text-blue-600">
+                <div class="relative group">
+                    <button class="flex items-center space-x-2 text-gray-700 hover:text-blue-600 focus:outline-none">
                         <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
                             <i class="fas fa-user text-blue-600"></i>
                         </div>
@@ -105,6 +79,38 @@ $user_name = $_SESSION["user_name"];
 
                         <i class="fas fa-chevron-down text-xs"></i>
                     </button>
+                    
+                    <!-- Fixed Logout Dropdown -->
+                    <div class="absolute right-0 mt-2 w-40 bg-white rounded-lg shadow-lg border border-gray-200 z-50 hidden group-hover:block">
+                        <div class="py-2">
+                            <a href="logout.php" class="flex items-center px-4 py-2.5 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-150 text-sm">
+                                <i class="fas fa-sign-out-alt text-gray-400 hover:text-blue-500 mr-3 text-base"></i>
+                                <span>Logout</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                        </div>
+
+                        <span class="hidden md:inline">
+                            <?= htmlspecialchars($user_name); ?>
+                        </span>
+
+                        <i class="fas fa-chevron-down text-xs"></i>
+                    </button>
+                    
+                    <!-- Elegant Logout Dropdown -->
+                    <div class="absolute right-0 mt-2 w-36 bg-white rounded-xl shadow-xl border border-gray-100 z-50 hidden group-hover:block overflow-hidden">
+                        <div class="p-2">
+                            <a href="logout.php" class="flex items-center px-4 py-2.5 text-gray-700 hover:bg-blue-50 rounded-lg transition-all duration-200">
+                                <div class="w-8 h-8 flex items-center justify-center mr-3">
+                                    <i class="fas fa-sign-out-alt text-blue-500"></i>
+                                </div>
+                                <span class="font-medium">Logout</span>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -164,7 +170,6 @@ $user_name = $_SESSION["user_name"];
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-
                 <div class="bg-white p-6 rounded-xl shadow-sm card-hover">
                     <div class="flex items-center justify-between mb-4">
                         <h2 class="text-lg font-semibold text-gray-700">Total Ideas</h2>
@@ -211,11 +216,7 @@ $user_name = $_SESSION["user_name"];
                     </div>
                 </div>
             </div>
-
-            
-
         </div>
     </div>
-
 </body>
 </html>

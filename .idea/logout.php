@@ -1,21 +1,21 @@
 <?php
 
 session_start();
-require_once "db1.php";
 
-
-unset($_SESSION["user_id"]);
-unset($_SESSION["user_name"]);
-
-
+$_SESSION = array();
 session_destroy();
 
-
-if (isset($conn)) {
-    $conn->close();
+if (ini_get("session.use_cookies")) {
+    $params = session_get_cookie_params();
+    setcookie(session_name(), '', time() - 42000,
+        $params["path"], $params["domain"],
+        $params["secure"], $params["httponly"]
+    );
 }
+header("Cache-Control: no-cache, no-store, must-revalidate");
+header("Pragma: no-cache");
+header("Expires: 0");
 
-
-header("Location: login.php");
+header("Location: ../index.php?logout=success");
 exit();
 ?>
