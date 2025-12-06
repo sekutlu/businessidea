@@ -1,3 +1,6 @@
+<?php
+session_start(); // Needed so index can detect logged-in users
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,7 +32,7 @@
             </div>
             
             <div class="flex items-center space-x-4">
-                <a href="upcoming_feature.php" class="text-gray-600 hover:text-blue-600 font-medium hidden md:block">Log in</a>
+                <a href="login.php" class="text-gray-600 hover:text-blue-600 font-medium hidden md:block">Log in</a>
                 <a href="create_idea.php" class="bg-blue-600 text-white px-5 py-2 rounded-lg hover:bg-blue-700 font-medium transition duration-300">
                     Get Started
                 </a>
@@ -48,7 +51,10 @@
                 <a href="create_idea.php" class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300 shadow-lg">
                     Create Your First Idea
                 </a>
-                <a href="dashboard.php" class="bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition duration-300">
+                <!-- DASHBOARD BUTTON NOW CHECKS LOGIN -->
+                <a href="<?php echo isset($_SESSION['user_id']) ? 'dashboard.php' : 'login.php'; ?>" 
+                   class="bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg font-semibold 
+                          hover:bg-white hover:text-blue-600 transition duration-300">
                     Explore Dashboard
                 </a>
             </div>
