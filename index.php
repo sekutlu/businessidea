@@ -1,5 +1,5 @@
 <?php
-session_start(); // Needed so index can detect logged-in users
+session_start(); 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,7 +14,7 @@ session_start(); // Needed so index can detect logged-in users
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body class="bg-gray-50">
-    <!-- Navigation -->
+    
     <nav class="bg-white shadow-sm py-4 sticky top-0 z-10">
         <div class="container mx-auto px-6 flex justify-between items-center">
             <div class="flex items-center space-x-2">
@@ -40,7 +40,6 @@ session_start(); // Needed so index can detect logged-in users
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="gradient-bg text-white py-20">
         <div class="container mx-auto px-6 text-center">
             <h1 class="text-4xl md:text-6xl font-bold mb-6" data-aos="fade-down">Turn Ideas Into Reality</h1>
@@ -51,7 +50,7 @@ session_start(); // Needed so index can detect logged-in users
                 <a href="create_idea.php" class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300 shadow-lg">
                     Create Your First Idea
                 </a>
-                <!-- DASHBOARD BUTTON NOW CHECKS LOGIN -->
+                
                 <a href="<?php echo isset($_SESSION['user_id']) ? 'dashboard.php' : 'login.php'; ?>" 
                    class="bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg font-semibold 
                           hover:bg-white hover:text-blue-600 transition duration-300">
@@ -61,7 +60,6 @@ session_start(); // Needed so index can detect logged-in users
         </div>
     </section>
 
-    <!-- Features Section -->
     <section class="py-20 bg-white">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16" data-aos="fade-up">
@@ -70,7 +68,7 @@ session_start(); // Needed so index can detect logged-in users
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Feature 1 -->
+                
                 <div class="bg-gray-50 p-8 rounded-xl card-hover" data-aos="fade-up" data-aos-delay="100">
                     <div class="feature-icon bg-blue-100 text-blue-600">
                         <i class="fas fa-brain text-2xl"></i>
@@ -93,7 +91,6 @@ session_start(); // Needed so index can detect logged-in users
                     </ul>
                 </div>
                 
-                <!-- Feature 2 -->
                 <div class="bg-gray-50 p-8 rounded-xl card-hover" data-aos="fade-up" data-aos-delay="200">
                     <div class="feature-icon bg-purple-100 text-purple-600">
                         <i class="fas fa-users text-2xl"></i>
@@ -116,7 +113,6 @@ session_start(); // Needed so index can detect logged-in users
                     </ul>
                 </div>
                 
-                <!-- Feature 3 -->
                 <div class="bg-gray-50 p-8 rounded-xl card-hover" data-aos="fade-up" data-aos-delay="300">
                     <div class="feature-icon bg-cyan-100 text-cyan-600">
                         <i class="fas fa-chart-line text-2xl"></i>
@@ -142,7 +138,6 @@ session_start(); // Needed so index can detect logged-in users
         </div>
     </section>
 
-    <!-- How It Works Section -->
     <section class="py-20 bg-gray-50">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16" data-aos="fade-up">
@@ -239,7 +234,6 @@ session_start(); // Needed so index can detect logged-in users
         </div>
     </section>
 
-    <!-- Testimonials Section -->
     <section class="py-20 bg-white">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16" data-aos="fade-up">
@@ -248,7 +242,6 @@ session_start(); // Needed so index can detect logged-in users
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Testimonial 1 -->
                 <div class="bg-gray-50 p-6 rounded-xl" data-aos="fade-up" data-aos-delay="100">
                     <div class="flex items-center mb-4">
                         <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-bold mr-4">
@@ -271,7 +264,6 @@ session_start(); // Needed so index can detect logged-in users
                     </div>
                 </div>
                 
-                <!-- Testimonial 2 -->
                 <div class="bg-gray-50 p-6 rounded-xl" data-aos="fade-up" data-aos-delay="200">
                     <div class="flex items-center mb-4">
                         <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center text-purple-600 font-bold mr-4">
@@ -294,7 +286,6 @@ session_start(); // Needed so index can detect logged-in users
                     </div>
                 </div>
                 
-                <!-- Testimonial 3 -->
                 <div class="bg-gray-50 p-6 rounded-xl" data-aos="fade-up" data-aos-delay="300">
                     <div class="flex items-center mb-4">
                         <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-green-600 font-bold mr-4">
@@ -320,7 +311,6 @@ session_start(); // Needed so index can detect logged-in users
         </div>
     </section>
 
-    <!-- CTA Section -->
     <section class="py-16 gradient-bg text-white">
         <div class="container mx-auto px-6 text-center">
             <h2 class="text-3xl md:text-4xl font-bold mb-6" data-aos="zoom-in">Ready to Bring Your Ideas to Life?</h2>
@@ -339,7 +329,6 @@ session_start(); // Needed so index can detect logged-in users
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="bg-gray-800 text-white py-12">
         <div class="container mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -409,8 +398,8 @@ session_start(); // Needed so index can detect logged-in users
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
       AOS.init({
-        duration: 800, // Animation duration in milliseconds
-        once: true,    // Whether animation should happen only once - while scrolling down
+        duration: 800, 
+        once: true,    
       });
     </script>
 </body>
