@@ -2,7 +2,6 @@
 session_start();
 require __DIR__ . '/business idea.php';
 
-// CSRF token
 if (empty($_SESSION['csrf_token'])) {
     $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
 }
@@ -14,7 +13,7 @@ function flash($msg, $type = 'info') {
 }
 
 if (isset($_POST['register'])) {
-    // CSRF check
+    
     if (!isset($_POST['csrf_token']) || !hash_equals($_SESSION['csrf_token'], $_POST['csrf_token'])) {
         flash('Invalid form submission.', 'error');
         header("Location: registration.php");
@@ -26,7 +25,6 @@ if (isset($_POST['register'])) {
     $password = $_POST['password'] ?? '';
     $confirm = $_POST['confirm_password'] ?? '';
 
-    // Basic validation (consistent with your earlier rules)
     if (strlen($name) < 3) {
         flash('Name must be at least 3 characters.', 'error');
     } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -36,7 +34,7 @@ if (isset($_POST['register'])) {
     } elseif ($password !== $confirm) {
         flash('Passwords do not match.', 'error');
     } else {
-        // Check existing email
+        
         $stmt = $pdo->prepare("SELECT id FROM users1 WHERE email = ? LIMIT 1");
         $stmt->execute([$email]);
         if ($stmt->fetch()) {
