@@ -1,0 +1,56 @@
+# Database credentials
+config/database.php
+
+# Setup/Install files (remove after setup)
+setup.php
+create_tables.php
+check.php
+
+# Uploads directory
+uploads/
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.pdf
+*.doc
+*.docx
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+error_log
+php_errors.log
+
+# Temporary files
+tmp/
+temp/
+cache/
+
+# Environment files
+.env
+.env.local
+
+# Composer
+vendor/
+composer.lock
+
+# Node modules (if using)
+node_modules/
+package-lock.json
+
+# Backup files
+*.bak
+*.backup
+*.sql.gz

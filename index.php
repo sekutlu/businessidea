@@ -10,7 +10,7 @@ session_start();
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="theme.css">
+    <link rel="stylesheet" href="assets/css/theme.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body class="bg-gray-50">
@@ -25,15 +25,13 @@ session_start();
             </div>
             
             <div class="hidden md:flex space-x-8">
-                <a href="upcoming_feature.php" class="text-gray-600 hover:text-blue-600 font-medium">Features</a>
-                <a href="upcoming_feature.php" class="text-gray-600 hover:text-blue-600 font-medium">Solutions</a>
-                <a href="upcoming_feature.php" class="text-gray-600 hover:text-blue-600 font-medium">Pricing</a>
-                <a href="upcoming_feature.php" class="text-gray-600 hover:text-blue-600 font-medium">Resources</a>
+                <a href="pages/register.php" class="text-gray-600 hover:text-blue-600 font-medium">Features</a>
+                <a href="pages/subscription.php" class="text-gray-600 hover:text-blue-600 font-medium">Pricing</a>
             </div>
             
             <div class="flex items-center space-x-4">
-                <a href="login.php" class="text-gray-600 hover:text-blue-600 font-medium hidden md:block">Log in</a>
-                <a href="create_idea.php" class="bg-blue-600 text-white px-5 py-2 rounded-lg hover:bg-blue-700 font-medium transition duration-300">
+                <a href="pages/login.php" class="text-gray-600 hover:text-blue-600 font-medium hidden md:block">Log in</a>
+                <a href="pages/register.php" class="bg-blue-600 text-white px-5 py-2 rounded-lg hover:bg-blue-700 font-medium transition duration-300">
                     Get Started
                 </a>
             </div>
@@ -47,11 +45,11 @@ session_start();
                 Collaborate, organize, and bring your business ideas to life with our powerful platform designed for innovators.
             </p>
             <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-6" data-aos="fade-up" data-aos-delay="400">
-                <a href="create_idea.php" class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300 shadow-lg">
+                <a href="<?php echo isset($_SESSION['user_id']) ? 'pages/idea_wizard.php' : 'pages/register.php'; ?>" class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300 shadow-lg">
                     Create Your First Idea
                 </a>
                 
-                <a href="<?php echo isset($_SESSION['user_id']) ? 'dashboard.php' : 'login.php'; ?>" 
+                <a href="<?php echo isset($_SESSION['user_id']) ? 'pages/dashboard.php' : 'pages/login.php'; ?>" 
                    class="bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg font-semibold 
                           hover:bg-white hover:text-blue-600 transition duration-300">
                     Explore Dashboard
@@ -318,11 +316,11 @@ session_start();
                 Join thousands of innovators already using IdeateHub to turn their ideas into successful businesses.
             </p>
             <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-6" data-aos="zoom-in" data-aos-delay="400">
-                <a href="create_idea.php" class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300 shadow-lg">
+                <a href="<?php echo isset($_SESSION['user_id']) ? 'pages/idea_wizard.php' : 'pages/register.php'; ?>" class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300 shadow-lg">
                     Start Free Trial
                 </a>
-                <a href="upcoming_feature.php" class="bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition duration-300">
-                    Schedule a Demo
+                <a href="pages/subscription.php" class="bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition duration-300">
+                    View Pricing
                 </a>
             </div>
             <p class="mt-6 text-sm opacity-80">No credit card required. Free 14-day trial.</p>
@@ -343,16 +341,16 @@ session_start();
                         The ultimate platform for business idea management and collaboration.
                     </p>
                     <div class="flex space-x-4">
-                        <a href="upcoming_feature.php" class="text-gray-400 hover:text-white">
+                        <a href="pages/upcoming_feature.php" class="text-gray-400 hover:text-white">
                             <i class="fab fa-twitter"></i>
                         </a>
-                        <a href="upcoming_feature.php" class="text-gray-400 hover:text-white">
+                        <a href="pages/upcoming_feature.php" class="text-gray-400 hover:text-white">
                             <i class="fab fa-facebook-f"></i>
                         </a>
-                        <a href="upcoming_feature.php" class="text-gray-400 hover:text-white">
+                        <a href="pages/upcoming_feature.php" class="text-gray-400 hover:text-white">
                             <i class="fab fa-linkedin-in"></i>
                         </a>
-                        <a href="upcoming_feature.php" class="text-gray-400 hover:text-white">
+                        <a href="pages/upcoming_feature.php" class="text-gray-400 hover:text-white">
                             <i class="fab fa-instagram"></i>
                         </a>
                     </div>
@@ -361,30 +359,30 @@ session_start();
                 <div>
                     <h3 class="font-bold text-lg mb-4">Product</h3>
                     <ul class="space-y-2">
-                        <li><a href="upcoming_feature.php" class="text-gray-400 hover:text-white">Features</a></li>
-                        <li><a href="upcoming_feature.php" class="text-gray-400 hover:text-white">Solutions</a></li>
-                        <li><a href="upcoming_feature.php" class="text-gray-400 hover:text-white">Pricing</a></li>
-                        <li><a href="upcoming_feature.php" class="text-gray-400 hover:text-white">Templates</a></li>
+                        <li><a href="pages/upcoming_feature.php" class="text-gray-400 hover:text-white">Features</a></li>
+                        <li><a href="pages/upcoming_feature.php" class="text-gray-400 hover:text-white">Solutions</a></li>
+                        <li><a href="pages/upcoming_feature.php" class="text-gray-400 hover:text-white">Pricing</a></li>
+                        <li><a href="pages/upcoming_feature.php" class="text-gray-400 hover:text-white">Templates</a></li>
                     </ul>
                 </div>
                 
                 <div>
                     <h3 class="font-bold text-lg mb-4">Resources</h3>
                     <ul class="space-y-2">
-                        <li><a href="upcoming_feature.php" class="text-gray-400 hover:text-white">Blog</a></li>
-                        <li><a href="upcoming_feature.php" class="text-gray-400 hover:text-white">User Guides</a></li>
-                        <li><a href="upcoming_feature.php" class="text-gray-400 hover:text-white">Webinars</a></li>
-                        <li><a href="upcoming_feature.php" class="text-gray-400 hover:text-white">Community</a></li>
+                        <li><a href="pages/upcoming_feature.php" class="text-gray-400 hover:text-white">Blog</a></li>
+                        <li><a href="pages/upcoming_feature.php" class="text-gray-400 hover:text-white">User Guides</a></li>
+                        <li><a href="pages/upcoming_feature.php" class="text-gray-400 hover:text-white">Webinars</a></li>
+                        <li><a href="pages/upcoming_feature.php" class="text-gray-400 hover:text-white">Community</a></li>
                     </ul>
                 </div>
                 
                 <div>
                     <h3 class="font-bold text-lg mb-4">Company</h3>
                     <ul class="space-y-2">
-                        <li><a href="upcoming_feature.php" class="text-gray-400 hover:text-white">About Us</a></li>
-                        <li><a href="upcoming_feature.php" class="text-gray-400 hover:text-white">Careers</a></li>
-                        <li><a href="upcoming_feature.php" class="text-gray-400 hover:text-white">Contact</a></li>
-                        <li><a href="upcoming_feature.php" class="text-gray-400 hover:text-white">Partners</a></li>
+                        <li><a href="pages/upcoming_feature.php" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="pages/upcoming_feature.php" class="text-gray-400 hover:text-white">Careers</a></li>
+                        <li><a href="pages/upcoming_feature.php" class="text-gray-400 hover:text-white">Contact</a></li>
+                        <li><a href="pages/upcoming_feature.php" class="text-gray-400 hover:text-white">Partners</a></li>
                     </ul>
                 </div>
             </div>
